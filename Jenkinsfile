@@ -1,11 +1,12 @@
 node {
-    checkout scm
 
-    docker.withRegistry('https://registry.hub.docker.com/', 'dockerhub') {
+checkout scm
 
-        def customImage = docker.build("mydevopsacademy/nodejs-app:${env.BUILD_ID}")
+docker.withRegistry('https://registry.hub.docker.com', 'dockerHub') {
 
-        /* Push the container to the custom Registry */
-        customImage.push()
-    }
+    def customImage = docker.build("mydevopsacademy/dockenodejsrwebapp")
+
+    /* Push the container to the custom Registry */
+    customImage.push()
+}
 }
