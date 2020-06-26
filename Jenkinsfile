@@ -1,7 +1,7 @@
 
 pipeline {
   environment {
-    registry = "mydevopsacademy/dockenodejsrwebapp"
+    registry = "mydevopsacademy/dockenodejsrwebapp1"
     registryCredential = 'dockerhub'
     dockerImage = ''
   }
@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/gustavoapolinario/microservices-node-example-todo-frontend.git'
+        git 'https://github.com/kz777/docker-nodejs.git'
       }
     }
     stage('Building image') {
